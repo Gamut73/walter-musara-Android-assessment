@@ -9,15 +9,15 @@
 
     <ImageView
         android:id="@+id/profile_image"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
         android:layout_margin="@dimen/margin_normal"
         android:src="@drawable/ic_person"
         android:background="@color/background_dark"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white"
         tools:ignore="ContentDescription" />
 
     <TextView
