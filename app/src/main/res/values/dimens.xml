@@ -34,4 +34,8 @@
     <dimen name="elevation_small">2dp</dimen>
     <dimen name="elevation_normal">4dp</dimen>
     <dimen name="elevation_large">6dp</dimen>
+
+    <!-- Sizes -->
+    <dimen name="profile_image_width">62dp</dimen>
+    <dimen name="profile_image_height">62dp</dimen>
 </resources>

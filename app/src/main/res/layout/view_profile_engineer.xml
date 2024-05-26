@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background_dark"
-    android:layout_margin="10dp">
+    android:background="@drawable/background_normal_corner_radius_dark"
+    android:layout_margin="@dimen/margin_tiny">
 
     <ImageView
         android:id="@+id/profile_image"
-        android:layout_width="62dp"
-        android:layout_height="62dp"
+        android:layout_width="@dimen/profile_image_width"
+        android:layout_height="@dimen/profile_image_height"
         android:layout_margin="@dimen/margin_normal"
         android:src="@drawable/ic_person"
-        android:background="@color/background_dark"
+        android:background="@drawable/background_normal_corner_radius_dark"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
