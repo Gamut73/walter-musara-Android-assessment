@@ -12,6 +12,7 @@ import com.glucode.about_you.mockdata.MockData
 
 class EngineersFragment : Fragment() {
     private lateinit var binding: FragmentEngineersBinding
+    private var lastSortMenuItemId: Int? = -1
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,13 +31,33 @@ class EngineersFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_years) {
-            return true
+        return when (item.itemId) {
+            R.id.action_years -> {
+                setUpEngineersList(MockData.engineers.sortedBy { it.quickStats.years }, item.itemId)
+                true
+            }
+
+            R.id.action_coffees -> {
+                setUpEngineersList(MockData.engineers.sortedBy { it.quickStats.coffees }, item.itemId)
+                true
+            }
+
+            R.id.action_bugs -> {
+                setUpEngineersList(MockData.engineers.sortedBy { it.quickStats.bugs }, item.itemId)
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
+    }
+
+    private fun setUpEngineersList(engineers: List<Engineer>, sortMenuItemId: Int) {
+        setUpEngineersList(if (lastSortMenuItemId == sortMenuItemId) engineers.reversed() else engineers)
+        lastSortMenuItemId = sortMenuItemId
     }
 
     private fun setUpEngineersList(engineers: List<Engineer>) {
+
         binding.list.adapter = EngineersRecyclerViewAdapter(engineers) {
             goToAbout(it)
         }
