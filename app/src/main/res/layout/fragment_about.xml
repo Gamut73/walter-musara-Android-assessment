@@ -7,7 +7,7 @@
 
     <include
         android:id="@+id/engineer_profile"
-        layout="@layout/view_profile_engineer"
+        layout="@layout/item_engineer"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/selectableItemBackground">
+    android:background="@drawable/background_normal_corner_radius_dark"
+    android:layout_margin="@dimen/margin_tiny">
 
     <ImageView
         android:id="@+id/profile_image"
@@ -12,17 +13,16 @@
         android:layout_height="@dimen/profile_image_height"
         android:layout_margin="@dimen/margin_normal"
         android:src="@drawable/ic_person"
-        android:background="@drawable/background_normal_corner_radius_light"
+        android:background="@drawable/background_normal_corner_radius_dark"
         android:padding="@dimen/padding_small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/black"
         tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/name"
-        style="@style/Material.Body1.Medium.Dark"
+        style="@style/Material.Body1.Medium.Light"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_normal"
@@ -44,6 +44,7 @@
         android:layout_marginEnd="@dimen/margin_normal"
         android:layout_marginBottom="@dimen/margin_normal"
         android:textAppearance="?attr/textAppearanceListItem"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/profile_image"
