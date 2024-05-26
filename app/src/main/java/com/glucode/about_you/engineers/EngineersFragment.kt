@@ -22,6 +22,7 @@ class EngineersFragment : Fragment() {
         binding = FragmentEngineersBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
         setUpEngineersList(MockData.engineers)
+        setupDivider()
         return binding.root
     }
 
@@ -61,7 +62,10 @@ class EngineersFragment : Fragment() {
         binding.list.adapter = EngineersRecyclerViewAdapter(engineers) {
             goToAbout(it)
         }
-        val dividerItemDecoration = DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
+    }
+
+    private fun setupDivider() {
+        val dividerItemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         binding.list.addItemDecoration(dividerItemDecoration)
     }
 
