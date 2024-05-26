@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.glucode.about_you.about.views.QuestionCardView
 import com.glucode.about_you.databinding.FragmentAboutBinding
 import com.glucode.about_you.engineers.models.Engineer
@@ -17,7 +18,7 @@ import java.io.File
 
 class AboutFragment: Fragment() {
     private lateinit var binding: FragmentAboutBinding
-    private lateinit var engineer: Engineer;
+    private lateinit var engineer: Engineer
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -81,6 +82,8 @@ class AboutFragment: Fragment() {
     private fun displayProfilePic(uri: Uri) {
         Glide.with(this)
             .load(uri)
+            .skipMemoryCache(true)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
             .into(binding.engineerProfile.profileImage)
     }
 }
