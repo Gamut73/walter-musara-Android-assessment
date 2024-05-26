@@ -44,6 +44,7 @@ class EngineersRecyclerViewAdapter(
                 binding.profileImage.setColorFilter(context.getColor(android.R.color.transparent))
                 Glide.with(binding.root)
                     .load(imageUri)
+                    .centerCrop()
                     .skipMemoryCache(true)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .into(binding.profileImage)

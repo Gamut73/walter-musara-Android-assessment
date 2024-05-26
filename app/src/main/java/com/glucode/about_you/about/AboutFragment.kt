@@ -82,6 +82,7 @@ class AboutFragment: Fragment() {
     private fun displayProfilePic(uri: Uri) {
         Glide.with(this)
             .load(uri)
+            .centerCrop()
             .skipMemoryCache(true)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
             .into(binding.engineerProfile.profileImage)
