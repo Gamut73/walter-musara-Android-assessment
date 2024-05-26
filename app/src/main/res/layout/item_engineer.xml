@@ -7,18 +7,26 @@
     android:background="@drawable/background_normal_corner_radius_dark"
     android:layout_margin="@dimen/margin_tiny">
 
-    <ImageView
-        android:id="@+id/profile_image"
-        android:layout_width="@dimen/profile_image_width"
-        android:layout_height="@dimen/profile_image_height"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_image_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_normal"
-        android:src="@drawable/ic_person"
-        android:background="@drawable/background_normal_corner_radius_dark"
-        android:padding="@dimen/padding_small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+        app:cardCornerRadius="@dimen/corner_radius_small"
+        app:cardBackgroundColor="@color/background_dark">
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/profile_image_width"
+            android:layout_height="@dimen/profile_image_height"
+            android:src="@drawable/ic_person"
+            android:background="@drawable/background_normal_corner_radius_dark"
+            tools:ignore="ContentDescription" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/name"
@@ -30,7 +38,7 @@
         android:layout_marginEnd="@dimen/margin_normal"
         app:layout_constraintBottom_toTopOf="@id/role"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/profile_image"
+        app:layout_constraintStart_toEndOf="@id/profile_image_container"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         tools:text="Developer name" />
@@ -47,7 +55,7 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/profile_image"
+        app:layout_constraintStart_toEndOf="@id/profile_image_container"
         app:layout_constraintTop_toBottomOf="@id/name"
         tools:text="Developer role" />
 
